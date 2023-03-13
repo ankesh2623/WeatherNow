@@ -7,6 +7,7 @@ import android.content.Intent;
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_sign_up_page.*
 import android.view.View;
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         btnSignUp.setOnClickListener {
             val intent=Intent(this,SignUpPage::class.java)
             startActivity(intent)
+
+            /*Toast.makeText(this,"SignUp Page",Toast.LENGTH_SHORT).show()*/
         }
     }
 }
