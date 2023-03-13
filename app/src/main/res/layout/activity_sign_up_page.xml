@@ -59,6 +59,7 @@
         android:id="@+id/editTextSignupPassword"
         android:layout_width="228dp"
         android:layout_height="60dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -70,21 +71,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintVertical_bias="0.048" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="Register"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/editTextSignupPassword"
+        app:layout_constraintEnd_toEndOf="@id/editTxtRetypePassword"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextSignupPassword"
-        app:layout_constraintTop_toBottomOf="@id/editTextSignupPassword"
-        app:layout_constraintVertical_bias="0.068"
-        tools:ignore="TextSizeCheck" />
+        app:layout_constraintStart_toStartOf="@id/editTxtRetypePassword"
+        app:layout_constraintTop_toBottomOf="@id/editTxtRetypePassword"
+        tools:ignore="TextSizeCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/promptToLogin"
@@ -94,11 +94,11 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/registerButton"
+        app:layout_constraintEnd_toEndOf="@id/btnRegister"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/registerButton"
-        app:layout_constraintTop_toBottomOf="@id/registerButton"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintStart_toStartOf="@id/btnRegister"
+        app:layout_constraintTop_toBottomOf="@id/btnRegister"
+        app:layout_constraintVertical_bias="0.036" />
 
     <TextView
         android:id="@+id/txtGoToLogin"
@@ -111,10 +111,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/promptToLogin"
         app:layout_constraintTop_toBottomOf="@id/promptToLogin"
-        app:layout_constraintVertical_bias="0.09"/>
+        app:layout_constraintVertical_bias="0.09" />
 
     <TextView
-        android:id="@+id/txtLogin"
+        android:id="@+id/txtLoginPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login Page"
@@ -125,7 +125,24 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/txtGoToLogin"
         app:layout_constraintTop_toBottomOf="@id/promptToLogin"
-        app:layout_constraintVertical_bias="0.09"/>
+        app:layout_constraintVertical_bias="0.09" />
+
+    <EditText
+        android:id="@+id/editTxtRetypePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Retype Password"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="22sp"
+        app:flow_verticalBias="0.048"
+        app:layout_constraintEnd_toEndOf="@id/editTextSignupPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/editTextSignupPassword"
+        app:layout_constraintTop_toBottomOf="@id/editTextSignupPassword" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
