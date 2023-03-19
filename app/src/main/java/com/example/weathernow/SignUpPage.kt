@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_sign_up_page.*
 class SignUpPage : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpPageBinding
-    private lateinit var fireBaseAuth:FirebaseAuth
+    private lateinit var fireBaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -29,8 +29,22 @@ class SignUpPage : AppCompatActivity() {
                 if (pass == confirmpass) {
                     fireBaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            val intent = Intent(this, LoginActivity::class.java)
-                            startActivity(intent)
+                            fireBaseAuth.currentUser?.sendEmailVerification()
+                                ?.addOnSuccessListener {
+                                    Toast.makeText(
+                                        this,
+                                        "Check your email for verification",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                        .show()
+
+                                }
+                                ?.addOnFailureListener {
+                                    Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
+                                }
+
+//                            val intent = Intent(this, LocationInputActivity::class.java)
+//                            startActivity(intent)
 
                         } else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
